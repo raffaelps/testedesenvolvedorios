@@ -13,10 +13,12 @@ class Pessoa: NSObject {
     var nome: String = ""
     var email: String = ""
     var imagem: UIImage!
+    var mensagem: Bool
     
-    init(nome: String, email: String, imagem: UIImage!) {
+    init(nome: String, email: String, imagem: UIImage!, mensagem: Bool) {
         self.nome = nome
         self.email = email
         self.imagem = imagem
+        self.mensagem = mensagem
     }
 }

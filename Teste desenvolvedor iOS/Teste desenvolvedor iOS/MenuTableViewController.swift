@@ -51,7 +51,7 @@ class MenuTableViewController: UITableViewController {
     }
     
     func carregarDadosUsuario() {
-        usuarioLogado = Pessoa(nome: "RICARDO AC", email: "ricardoac@email.com", imagem: UIImage(named: "img_perfil.png"))
+        usuarioLogado = Pessoa(nome: "RICARDO AC", email: "ricardoac@email.com", imagem: UIImage(named: "img_perfil.png"), mensagem: false)
     }
 
     // MARK: - Table view data source
