@@ -36,6 +36,8 @@
 		4D3B51561C4AA4CE00801668 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51551C4AA4CE00801668 /* UIColor.swift */; };
 		4D3B51581C4AA5AD00801668 /* Vendas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51571C4AA5AD00801668 /* Vendas.swift */; };
 		4D3B515C1C4AAB8E00801668 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B515B1C4AAB8E00801668 /* NSDate.swift */; };
+		4D3B51601C4AB83600801668 /* ico_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B515F1C4AB83600801668 /* ico_menu.png */; };
+		4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		4D3B51551C4AA4CE00801668 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4D3B51571C4AA5AD00801668 /* Vendas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vendas.swift; sourceTree = "<group>"; };
 		4D3B515B1C4AAB8E00801668 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		4D3B515F1C4AB83600801668 /* ico_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_menu.png; sourceTree = "<group>"; };
+		4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 				4D3B511E1C48674F00801668 /* MenuTableViewController.swift */,
 				4D3B51201C4868F500801668 /* DashboardViewController.swift */,
 				4D3B51491C4A95A400801668 /* MinhasVendasViewController.swift */,
+				4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		4D3B51221C4A646600801668 /* Icones */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B515F1C4AB83600801668 /* ico_menu.png */,
 				4D3B514B1C4AA22300801668 /* ico_lupa.png */,
 				4D3B514C1C4AA22300801668 /* ico_alert.png */,
 				4D3B512E1C4A6D5B00801668 /* Menu */,
@@ -279,6 +285,7 @@
 				4D3B513D1C4A6D8600801668 /* ico_afiliados.png in Resources */,
 				4D3B51381C4A6D8600801668 /* ico_dashboard.png in Resources */,
 				4D3B513C1C4A6D8600801668 /* ico_mensagem.png in Resources */,
+				4D3B51601C4AB83600801668 /* ico_menu.png in Resources */,
 				4D3B51391C4A6D8600801668 /* ico_sobre_o_app.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +305,7 @@
 				4D3B514A1C4A95A400801668 /* MinhasVendasViewController.swift in Sources */,
 				4D3B51191C48515D00801668 /* KYDrawerController.swift in Sources */,
 				4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */,
+				4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */,
 				4D3B512B1C4A664600801668 /* Pessoa.swift in Sources */,
 				4D3B511F1C48674F00801668 /* MenuTableViewController.swift in Sources */,
 				4D3B51501C4AA2C100801668 /* VendasTableViewCell.swift in Sources */,

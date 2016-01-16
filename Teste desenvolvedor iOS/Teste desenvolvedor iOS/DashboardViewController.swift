@@ -12,8 +12,17 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Dashboard"
+        
+        navigationController?.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let button = UIButton()
+        button.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
+        button.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
+        button.frame=CGRectMake(0, 0, 20, 14)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -23,6 +32,12 @@ class DashboardViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func abrirMenu(sender: UIButton) {
+        if let drawerController = navigationController?.parentViewController as? KYDrawerController {
+            drawerController.setDrawerState(.Opened, animated: true)
+        }
     }
     
 

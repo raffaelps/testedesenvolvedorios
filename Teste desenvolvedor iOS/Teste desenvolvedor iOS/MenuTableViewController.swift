@@ -96,19 +96,35 @@ class MenuTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if let drawerController = navigationController?.parentViewController as? KYDrawerController {
-            let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TesteNavigation") as! UINavigationController
-            let backgroundColor: UIColor
+            
+            let corTitulo: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            
             switch indexPath.row {
-            case 0:
-                backgroundColor = UIColor.redColor()
             case 1:
-                backgroundColor = UIColor.blueColor()
+                let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
+                mainNavigation.navigationBar.titleTextAttributes = corTitulo as? [String : AnyObject]
+                drawerController.mainViewController = mainNavigation
+                drawerController.setDrawerState(.Closed, animated: true)
+                break
+            case 2:
+                let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MinhasVendas") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
+                mainNavigation.navigationBar.titleTextAttributes = corTitulo as? [String : AnyObject]
+                drawerController.mainViewController = mainNavigation
+                drawerController.setDrawerState(.Closed, animated: true)
+                break
+            case 5:
+                let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Mensagens") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#e7ad45")
+                mainNavigation.navigationBar.titleTextAttributes = corTitulo as? [String : AnyObject]
+                drawerController.mainViewController = mainNavigation
+                drawerController.setDrawerState(.Closed, animated: true)
+                break
             default:
-                backgroundColor = UIColor.whiteColor()
+                break
             }
-            mainNavigation.topViewController?.view.backgroundColor = backgroundColor
-            drawerController.mainViewController = mainNavigation
-            drawerController.setDrawerState(.Closed, animated: true)
+            
         }
     }
 

@@ -16,10 +16,14 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Minhas vendas"
+        self.title = "Minhas Vendas"
         
-        UINavigationBar.appearance().barTintColor = UIColor.colorWithHexString("#4982c5")
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        let button = UIButton()
+        button.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
+        button.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
+        button.frame=CGRectMake(0, 0, 20, 14)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
         
         formatter.numberStyle = .CurrencyStyle
 
@@ -34,6 +38,12 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func abrirMenu(sender: UIButton) {
+        if let drawerController = navigationController?.parentViewController as? KYDrawerController {
+            drawerController.setDrawerState(.Opened, animated: true)
+        }
     }
     
     func carregarVendas() {
