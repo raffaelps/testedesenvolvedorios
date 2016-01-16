@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Drawer Controller-->
@@ -86,20 +87,61 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_dashboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-Ax-7JQ">
-                                            <rect key="frame" x="9" y="7" width="43" height="43"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F18-mq-ko5">
-                                            <rect key="frame" x="82" y="17" width="324" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F18-mq-ko5">
+                                            <rect key="frame" x="90" y="19" width="316" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="324" id="son-bu-lw9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                             <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUI-Ky-7bf">
+                                            <rect key="frame" x="380" y="19" width="17" height="18"/>
+                                            <color key="backgroundColor" red="0.90588235289999997" green="0.67843137249999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_dashboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-Ax-7JQ">
+                                            <rect key="frame" x="17" y="6" width="43" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="fg6-oU-MiG"/>
+                                                <constraint firstAttribute="height" constant="43" id="hzD-66-fZ0"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="leading" secondItem="DO4-u9-RB7" secondAttribute="leadingMargin" constant="1" id="11g-zN-tGE"/>
+                                        <constraint firstItem="iUI-Ky-7bf" firstAttribute="top" secondItem="F18-mq-ko5" secondAttribute="top" id="5ef-Wf-nof"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qc6-Ax-7JQ" secondAttribute="bottom" constant="-3" id="EzK-wc-Kk4"/>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="top" secondItem="DO4-u9-RB7" secondAttribute="topMargin" constant="-1" id="JAa-Zv-xwQ"/>
+                                        <constraint firstItem="F18-mq-ko5" firstAttribute="trailing" secondItem="DO4-u9-RB7" secondAttribute="trailingMargin" id="Vam-7B-NWg"/>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="centerY" secondItem="iUI-Ky-7bf" secondAttribute="centerY" id="WsU-Tm-80Y"/>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="leading" secondItem="DO4-u9-RB7" secondAttribute="leadingMargin" constant="9" id="av8-kS-77c"/>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="top" secondItem="DO4-u9-RB7" secondAttribute="topMargin" constant="-2" id="fu6-8I-fRd"/>
+                                        <constraint firstItem="iUI-Ky-7bf" firstAttribute="bottom" secondItem="F18-mq-ko5" secondAttribute="bottom" id="hxE-5I-Egx"/>
+                                        <constraint firstItem="qc6-Ax-7JQ" firstAttribute="centerY" secondItem="DO4-u9-RB7" secondAttribute="centerY" constant="-68" id="oUG-ZQ-eLn"/>
+                                        <constraint firstItem="F18-mq-ko5" firstAttribute="leading" secondItem="qc6-Ax-7JQ" secondAttribute="trailing" constant="30" id="sB1-vk-Nur"/>
+                                        <constraint firstItem="F18-mq-ko5" firstAttribute="leading" secondItem="qc6-Ax-7JQ" secondAttribute="trailing" constant="30" id="sOH-6O-aaW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iUI-Ky-7bf" secondAttribute="trailing" constant="9" id="tBU-4Y-coO"/>
+                                        <constraint firstItem="iUI-Ky-7bf" firstAttribute="centerY" secondItem="DO4-u9-RB7" secondAttribute="centerY" id="ymc-KN-nUH"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="11g-zN-tGE"/>
+                                            <exclude reference="EzK-wc-Kk4"/>
+                                            <exclude reference="JAa-Zv-xwQ"/>
+                                            <exclude reference="fu6-8I-fRd"/>
+                                            <exclude reference="oUG-ZQ-eLn"/>
+                                            <exclude reference="sOH-6O-aaW"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imagemOpcao" destination="qc6-Ax-7JQ" id="IPx-Zj-FlK"/>
                                     <outlet property="nomeOpcao" destination="F18-mq-ko5" id="z10-ye-0Qc"/>
+                                    <outlet property="valorOpcao" destination="iUI-Ky-7bf" id="Zr8-ua-tMY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
