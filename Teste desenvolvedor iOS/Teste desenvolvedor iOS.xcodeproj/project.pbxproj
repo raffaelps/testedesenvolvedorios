@@ -17,6 +17,18 @@
 		4D3B511B1C48515D00801668 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51181C48515D00801668 /* KYEmbedMainControllerSegue.swift */; };
 		4D3B511F1C48674F00801668 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B511E1C48674F00801668 /* MenuTableViewController.swift */; };
 		4D3B51211C4868F500801668 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51201C4868F500801668 /* DashboardViewController.swift */; };
+		4D3B51251C4A647900801668 /* img_perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51241C4A647900801668 /* img_perfil.png */; };
+		4D3B51281C4A64EA00801668 /* PerfilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51271C4A64EA00801668 /* PerfilTableViewCell.swift */; };
+		4D3B512B1C4A664600801668 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B512A1C4A664600801668 /* Pessoa.swift */; };
+		4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */; };
+		4D3B51381C4A6D8600801668 /* ico_dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51301C4A6D8600801668 /* ico_dashboard.png */; };
+		4D3B51391C4A6D8600801668 /* ico_sobre_o_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51311C4A6D8600801668 /* ico_sobre_o_app.png */; };
+		4D3B513A1C4A6D8600801668 /* ico_minha_conta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51321C4A6D8600801668 /* ico_minha_conta.png */; };
+		4D3B513B1C4A6D8600801668 /* ico_notificacoes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51331C4A6D8600801668 /* ico_notificacoes.png */; };
+		4D3B513C1C4A6D8600801668 /* ico_mensagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51341C4A6D8600801668 /* ico_mensagem.png */; };
+		4D3B513D1C4A6D8600801668 /* ico_afiliados.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51351C4A6D8600801668 /* ico_afiliados.png */; };
+		4D3B513E1C4A6D8600801668 /* ico_meus_produtos.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51361C4A6D8600801668 /* ico_meus_produtos.png */; };
+		4D3B513F1C4A6D8600801668 /* ico_minhas_vendas.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51371C4A6D8600801668 /* ico_minhas_vendas.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +44,18 @@
 		4D3B51181C48515D00801668 /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
 		4D3B511E1C48674F00801668 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		4D3B51201C4868F500801668 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		4D3B51241C4A647900801668 /* img_perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_perfil.png; sourceTree = "<group>"; };
+		4D3B51271C4A64EA00801668 /* PerfilTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilTableViewCell.swift; sourceTree = "<group>"; };
+		4D3B512A1C4A664600801668 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
+		4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		4D3B51301C4A6D8600801668 /* ico_dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_dashboard.png; sourceTree = "<group>"; };
+		4D3B51311C4A6D8600801668 /* ico_sobre_o_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_sobre_o_app.png; sourceTree = "<group>"; };
+		4D3B51321C4A6D8600801668 /* ico_minha_conta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_minha_conta.png; sourceTree = "<group>"; };
+		4D3B51331C4A6D8600801668 /* ico_notificacoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_notificacoes.png; sourceTree = "<group>"; };
+		4D3B51341C4A6D8600801668 /* ico_mensagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_mensagem.png; sourceTree = "<group>"; };
+		4D3B51351C4A6D8600801668 /* ico_afiliados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_afiliados.png; sourceTree = "<group>"; };
+		4D3B51361C4A6D8600801668 /* ico_meus_produtos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_meus_produtos.png; sourceTree = "<group>"; };
+		4D3B51371C4A6D8600801668 /* ico_minhas_vendas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_minhas_vendas.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +88,8 @@
 		4D3B51011C484FBC00801668 /* Teste desenvolvedor iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B51291C4A663000801668 /* Entidades */,
+				4D3B51261C4A64C800801668 /* Cells */,
 				4D3B511D1C48672800801668 /* Controllers */,
 				4D3B510E1C484FBC00801668 /* Info.plist */,
 				4D3B51021C484FBC00801668 /* AppDelegate.swift */,
@@ -98,6 +124,8 @@
 		4D3B511C1C48571E00801668 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B51231C4A646E00801668 /* Outras */,
+				4D3B51221C4A646600801668 /* Icones */,
 			);
 			name = Imagens;
 			sourceTree = "<group>";
@@ -109,6 +137,54 @@
 				4D3B51201C4868F500801668 /* DashboardViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4D3B51221C4A646600801668 /* Icones */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B512E1C4A6D5B00801668 /* Menu */,
+			);
+			name = Icones;
+			sourceTree = "<group>";
+		};
+		4D3B51231C4A646E00801668 /* Outras */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B51241C4A647900801668 /* img_perfil.png */,
+			);
+			name = Outras;
+			sourceTree = "<group>";
+		};
+		4D3B51261C4A64C800801668 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B51271C4A64EA00801668 /* PerfilTableViewCell.swift */,
+				4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4D3B51291C4A663000801668 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B512A1C4A664600801668 /* Pessoa.swift */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
+		4D3B512E1C4A6D5B00801668 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B51301C4A6D8600801668 /* ico_dashboard.png */,
+				4D3B51311C4A6D8600801668 /* ico_sobre_o_app.png */,
+				4D3B51321C4A6D8600801668 /* ico_minha_conta.png */,
+				4D3B51331C4A6D8600801668 /* ico_notificacoes.png */,
+				4D3B51341C4A6D8600801668 /* ico_mensagem.png */,
+				4D3B51351C4A6D8600801668 /* ico_afiliados.png */,
+				4D3B51361C4A6D8600801668 /* ico_meus_produtos.png */,
+				4D3B51371C4A6D8600801668 /* ico_minhas_vendas.png */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +245,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3B513B1C4A6D8600801668 /* ico_notificacoes.png in Resources */,
 				4D3B510D1C484FBC00801668 /* LaunchScreen.storyboard in Resources */,
 				4D3B510A1C484FBC00801668 /* Assets.xcassets in Resources */,
+				4D3B513A1C4A6D8600801668 /* ico_minha_conta.png in Resources */,
 				4D3B51081C484FBC00801668 /* Main.storyboard in Resources */,
+				4D3B513E1C4A6D8600801668 /* ico_meus_produtos.png in Resources */,
+				4D3B513F1C4A6D8600801668 /* ico_minhas_vendas.png in Resources */,
+				4D3B51251C4A647900801668 /* img_perfil.png in Resources */,
+				4D3B513D1C4A6D8600801668 /* ico_afiliados.png in Resources */,
+				4D3B51381C4A6D8600801668 /* ico_dashboard.png in Resources */,
+				4D3B513C1C4A6D8600801668 /* ico_mensagem.png in Resources */,
+				4D3B51391C4A6D8600801668 /* ico_sobre_o_app.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3B511A1C48515D00801668 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				4D3B51281C4A64EA00801668 /* PerfilTableViewCell.swift in Sources */,
 				4D3B51211C4868F500801668 /* DashboardViewController.swift in Sources */,
 				4D3B51191C48515D00801668 /* KYDrawerController.swift in Sources */,
+				4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */,
+				4D3B512B1C4A664600801668 /* Pessoa.swift in Sources */,
 				4D3B511F1C48674F00801668 /* MenuTableViewController.swift in Sources */,
 				4D3B511B1C48515D00801668 /* KYEmbedMainControllerSegue.swift in Sources */,
 				4D3B51051C484FBC00801668 /* ViewController.swift in Sources */,
@@ -338,6 +426,7 @@
 				4D3B51131C484FBC00801668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

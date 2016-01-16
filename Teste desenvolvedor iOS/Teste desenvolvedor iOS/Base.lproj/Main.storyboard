@@ -45,17 +45,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="197" id="GLt-bN-cMk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PerfilTableViewCell" rowHeight="197" id="GLt-bN-cMk" customClass="PerfilTableViewCell" customModule="Teste_desenvolvedor_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="197"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GLt-bN-cMk" id="LXm-Lj-XC8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXp-8M-iIh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="LXp-8M-iIh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-ui-j28">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-ui-j28">
                                             <rect key="frame" x="10" y="23" width="80" height="80"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RICARDO AC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-sS-tnR">
@@ -72,6 +72,35 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emailPerfil" destination="OR8-ZY-xyR" id="aNE-dT-Den"/>
+                                    <outlet property="imagemBackground" destination="LXp-8M-iIh" id="Gfb-WR-gZh"/>
+                                    <outlet property="imagemPerfil" destination="EnG-ui-j28" id="aqX-2n-buN"/>
+                                    <outlet property="nomePerfil" destination="Kdu-sS-tnR" id="fAd-08-0TR"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="56" id="hyG-s7-wdW" customClass="MenuTableViewCell" customModule="Teste_desenvolvedor_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="225" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyG-s7-wdW" id="DO4-u9-RB7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_dashboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-Ax-7JQ">
+                                            <rect key="frame" x="9" y="7" width="43" height="43"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F18-mq-ko5">
+                                            <rect key="frame" x="82" y="17" width="324" height="21"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagemOpcao" destination="qc6-Ax-7JQ" id="IPx-Zj-FlK"/>
+                                    <outlet property="nomeOpcao" destination="F18-mq-ko5" id="z10-ye-0Qc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -81,6 +110,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OaA-36-m2h"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sX-k4-xda" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,4 +209,8 @@
             <point key="canvasLocation" x="1711" y="943"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ico_dashboard.png" width="178" height="178"/>
+        <image name="img_perfil.png" width="490" height="421"/>
+    </resources>
 </document>
