@@ -17,7 +17,14 @@ class PerfilTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        imagemPerfil.layer.cornerRadius = imagemPerfil.frame.size.width / 2;
+        imagemPerfil.clipsToBounds = true
+        
+        let blurEffect = UIBlurEffect(style: .Dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = imagemBackground.frame
+        imagemBackground.addSubview(blurView)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

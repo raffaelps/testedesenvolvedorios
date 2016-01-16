@@ -12,7 +12,7 @@ class Pessoa: NSObject {
 
     var nome: String = ""
     var email: String = ""
-    let imagem: UIImage!
+    var imagem: UIImage!
     
     init(nome: String, email: String, imagem: UIImage!) {
         self.nome = nome
