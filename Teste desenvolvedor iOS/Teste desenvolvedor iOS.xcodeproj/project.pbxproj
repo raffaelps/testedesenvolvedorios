@@ -108,6 +108,7 @@
 		4D3B51011C484FBC00801668 /* Teste desenvolvedor iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4DE8D2F61C4C039E00F27232 /* Servicos */,
 				4D3B51291C4A663000801668 /* Entidades */,
 				4D3B51261C4A64C800801668 /* Cells */,
 				4D3B511D1C48672800801668 /* Controllers */,
@@ -215,6 +216,13 @@
 				4D3B51371C4A6D8600801668 /* ico_minhas_vendas.png */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		4DE8D2F61C4C039E00F27232 /* Servicos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Servicos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

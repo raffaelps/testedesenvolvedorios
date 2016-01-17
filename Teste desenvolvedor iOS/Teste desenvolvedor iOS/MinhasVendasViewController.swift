@@ -18,11 +18,11 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         self.title = "Minhas Vendas"
         
-        let button = UIButton()
-        button.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
-        button.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
-        button.frame=CGRectMake(0, 0, 20, 14)
-        let barButton = UIBarButtonItem(customView: button)
+        let botaoMenu = UIButton()
+        botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
+        botaoMenu.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
+        botaoMenu.frame=CGRectMake(0, 0, 20, 14)
+        let barButton = UIBarButtonItem(customView: botaoMenu)
         self.navigationItem.leftBarButtonItem = barButton
         
         formatter.numberStyle = .CurrencyStyle

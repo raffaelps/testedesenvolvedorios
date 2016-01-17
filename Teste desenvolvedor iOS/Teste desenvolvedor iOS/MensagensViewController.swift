@@ -17,12 +17,22 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         super.viewDidLoad()
         self.title = "Mensagens"
         
-        let button = UIButton()
-        button.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
-        button.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
-        button.frame=CGRectMake(0, 0, 20, 14)
-        let barButton = UIBarButtonItem(customView: button)
+        let botaoMenu = UIButton()
+        botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
+        botaoMenu.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)
+        botaoMenu.frame=CGRectMake(0, 0, 20, 14)
+        let barButton = UIBarButtonItem(customView: botaoMenu)
         self.navigationItem.leftBarButtonItem = barButton
+        
+        let numeroMensagens = UILabel()
+        numeroMensagens.text = "+100"
+        numeroMensagens.font = UIFont(name: "Helvetica", size: 12)
+        numeroMensagens.textAlignment = .Center
+        numeroMensagens.textColor = UIColor.blackColor()
+        numeroMensagens.backgroundColor = UIColor.whiteColor()
+        numeroMensagens.frame=CGRectMake(0, 0, 30, 22)
+        let barBotaoNumeroMensagens = UIBarButtonItem(customView: numeroMensagens)
+        self.navigationItem.rightBarButtonItem = barBotaoNumeroMensagens
         
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         

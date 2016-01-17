@@ -74,6 +74,8 @@ class MenuTableViewController: UITableViewController {
             cell.imagemPerfil.image = usuarioLogado.imagem
             cell.imagemBackground.image = usuarioLogado.imagem
             
+            cell.selectionStyle = .None
+            
             return cell
         }
         else {
