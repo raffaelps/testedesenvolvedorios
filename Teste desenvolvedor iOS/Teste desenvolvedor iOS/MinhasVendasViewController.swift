@@ -12,6 +12,8 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
 
     var listaVendas = NSMutableArray()
     var formatter = NSNumberFormatter()
+    
+    @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

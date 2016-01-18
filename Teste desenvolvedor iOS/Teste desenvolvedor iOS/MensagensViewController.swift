@@ -19,9 +19,6 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         super.viewDidLoad()
         self.title = "Mensagens"
         
-        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CustomTabBarViewController")
-        self.tabBar.addSubview(tabBarController.view)
-        
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
         botaoMenu.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)

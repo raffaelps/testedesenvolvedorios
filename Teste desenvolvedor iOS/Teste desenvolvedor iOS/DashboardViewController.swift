@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabBar: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tituloSaldo: UILabel!
@@ -46,10 +46,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func customizarTela() {
         
         self.tableView.separatorStyle = .None
-        self.tabBar.delegate = self
-        self.tabBar.backgroundColor = UIColor.whiteColor()
         
-        navigationController?.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
+        navigationController?.navigationBar.barTintColor = UIColor.colorWithHexString("#E9351B")
+        navigationController?.navigationBar.translucent = false
+        
+        //Retirar borda abaixo da navigation bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         let botaoMenu = UIButton()
@@ -204,21 +208,5 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Tab bar delegate
     
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        
-        switch item.tag {
-        case 0:
-            [self .performSegueWithIdentifier("dashboardMinhasVendas", sender: nil)]
-            break
-        case 1:
-            [self .performSegueWithIdentifier("dashboardMensagens", sender: nil)]
-            break
-        case 2:
-            break
-        default:
-            break
-        }
-        
-    }
 
 }
