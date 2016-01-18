@@ -15,7 +15,6 @@ class MenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,10 +31,6 @@ class MenuTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
     
     func carregarOpcoesMenu() {
@@ -84,7 +79,16 @@ class MenuTableViewController: UITableViewController {
             let opcao = opcoesMenu.objectAtIndex(indexPath.row - 1) as! NSDictionary
             cell.nomeOpcao.text = opcao.objectForKey("nomeOpcao") as? String
             cell.imagemOpcao.image = UIImage(named: opcao.objectForKey("imagemOpcao") as! String)
-            cell.valorOpcao.text = opcao.objectForKey("valorOpcao") as? String
+            
+            let valor = opcao.objectForKey("valorOpcao") as! String
+            
+            if (valor.isEmpty) {
+                cell.valorOpcao.hidden = true
+            }
+            else {
+                cell.valorOpcao.hidden = false
+                cell.valorOpcao.text = valor
+            }
             
             return cell
         }

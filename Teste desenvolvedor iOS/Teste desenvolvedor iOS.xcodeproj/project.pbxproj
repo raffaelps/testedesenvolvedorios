@@ -40,6 +40,7 @@
 		4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */; };
 		4DE8D2F31C4AD61E00F27232 /* MensagensCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */; };
 		4DE8D2FA1C4C526200F27232 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */; };
+		4DE8D3011C4DA22900F27232 /* UIBorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensViewController.swift; sourceTree = "<group>"; };
 		4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBorderedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				4D3B515B1C4AAB8E00801668 /* NSDate.swift */,
 				4D3B51551C4AA4CE00801668 /* UIColor.swift */,
 				4D3B51151C48511B00801668 /* KYDrawerController */,
+				4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */,
 			);
 			name = Bibliotecas;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				4D3B51581C4AA5AD00801668 /* Vendas.swift in Sources */,
 				4D3B511A1C48515D00801668 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				4DE8D3011C4DA22900F27232 /* UIBorderedLabel.swift in Sources */,
 				4D3B51281C4A64EA00801668 /* PerfilTableViewCell.swift in Sources */,
 				4D3B51211C4868F500801668 /* DashboardViewController.swift in Sources */,
 				4D3B515C1C4AAB8E00801668 /* NSDate.swift in Sources */,

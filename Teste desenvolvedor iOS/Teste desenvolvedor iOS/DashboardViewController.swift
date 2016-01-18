@@ -33,10 +33,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         recuperarMensagens()
         carregarVendas()
     }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -104,7 +100,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             nomePerfil.textAlignment = .Center
             nomePerfil.textColor = UIColor.colorWithHexString("#919191")
             nomePerfil.font = UIFont(name: "Helvetica", size: 13)
-            nomePerfil.numberOfLines = 2
+            nomePerfil.numberOfLines = 0
             
             var pessoa = Pessoa!()
             let random = Int(arc4random_uniform(4))
@@ -147,6 +143,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             
             nomePerfil.text = pessoa.nome
+            nomePerfil.sizeToFit()
+            nomePerfil.frame = CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, 75, CGRectGetHeight(nomePerfil.frame))
             
             self.scrollMensagens.addSubview(imagemPerfil)
             self.scrollMensagens.addSubview(iconePerfil)

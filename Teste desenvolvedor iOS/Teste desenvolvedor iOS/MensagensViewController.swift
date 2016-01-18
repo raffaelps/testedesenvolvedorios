@@ -26,13 +26,14 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         let barButton = UIBarButtonItem(customView: botaoMenu)
         self.navigationItem.leftBarButtonItem = barButton
         
-        let numeroMensagens = UILabel()
-        numeroMensagens.text = "+100"
+        let numeroMensagens = UIBorderedLabel()
+        numeroMensagens.text = "+10"
         numeroMensagens.font = UIFont(name: "Helvetica", size: 12)
         numeroMensagens.textAlignment = .Center
         numeroMensagens.textColor = UIColor.blackColor()
         numeroMensagens.backgroundColor = UIColor.whiteColor()
-        numeroMensagens.frame=CGRectMake(0, 0, 30, 22)
+        numeroMensagens.frame = CGRectMake(0, 0, 30, 22)
+        numeroMensagens.adjustsFontSizeToFitWidth = true
         let barBotaoNumeroMensagens = UIBarButtonItem(customView: numeroMensagens)
         self.navigationItem.rightBarButtonItem = barBotaoNumeroMensagens
         

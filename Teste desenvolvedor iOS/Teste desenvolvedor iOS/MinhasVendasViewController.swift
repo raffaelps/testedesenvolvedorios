@@ -33,10 +33,6 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         
         carregarVendas()
     }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
