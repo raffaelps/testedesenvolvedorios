@@ -11,11 +11,16 @@ import UIKit
 class MensagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var listaPessoas = NSMutableArray()
+    
+    @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Mensagens"
+        
+        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CustomTabBarViewController")
+        self.tabBar.addSubview(tabBarController.view)
         
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)

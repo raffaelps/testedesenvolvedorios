@@ -8,8 +8,10 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
 
+    @IBOutlet weak var tabBar: UITabBar!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tituloSaldo: UILabel!
     @IBOutlet weak var valorSaldo: UILabel!
@@ -44,6 +46,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func customizarTela() {
         
         self.tableView.separatorStyle = .None
+        self.tabBar.delegate = self
+        self.tabBar.backgroundColor = UIColor.whiteColor()
         
         navigationController?.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -195,6 +199,25 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    // MARK: - Tab bar delegate
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        
+        switch item.tag {
+        case 0:
+            [self .performSegueWithIdentifier("dashboardMinhasVendas", sender: nil)]
+            break
+        case 1:
+            [self .performSegueWithIdentifier("dashboardMensagens", sender: nil)]
+            break
+        case 2:
+            break
+        default:
+            break
+        }
         
     }
 
