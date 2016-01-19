@@ -8,17 +8,24 @@
 
 import UIKit
 
+protocol CustomTabBarViewControllerDelegate {
+    func customTabBarCliqueBotao(tag: Int)
+}
+
 class CustomTabBarViewController: UIViewController {
     
     @IBOutlet weak var botaoMensagens: UIButton!
     @IBOutlet weak var botaoMinhasVendas: UIButton!
     @IBOutlet weak var botaoNotificacoes: UIButton!
     
+    var delegate: CustomTabBarViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        botaoMensagens.addTarget(self, action: "cliqueBotao:", forControlEvents: .TouchUpInside)
+        botaoMinhasVendas.addTarget(self, action: "cliqueBotao:", forControlEvents: .TouchUpInside)
+        botaoNotificacoes.addTarget(self, action: "cliqueBotao:", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +33,8 @@ class CustomTabBarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func cliqueBotao(sender: UIButton) {
+        self.delegate?.customTabBarCliqueBotao(sender.tag)
     }
-    */
 
 }

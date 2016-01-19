@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTabBarViewControllerDelegate {
 
     @IBOutlet weak var tabBar: UIView!
     
@@ -23,6 +23,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var listaVendas = NSMutableArray()
     var formatter = NSNumberFormatter()
+    var customTabBar: CustomTabBarViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,22 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.valorMensagens.text = "+10"
         
         
+    }
+    
+    func customTabBarCliqueBotao(tag: Int) {
+        
+        switch tag {
+        case 0:
+            [self.performSegueWithIdentifier("dashboardMensagens", sender: nil)]
+            break
+        case 1:
+            [self.performSegueWithIdentifier("dashboardMinhasVendas", sender: nil)]
+            break
+        case 2:
+            break
+        default:
+            break
+        }
     }
     
     func abrirMenu(sender: UIButton) {
@@ -204,7 +221,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    // MARK: - Tab bar delegate
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "dashboardCustomTabBar") {
+            customTabBar = segue.destinationViewController as! CustomTabBarViewController
+            customTabBar.delegate = self
+        }
+    }
 
 }

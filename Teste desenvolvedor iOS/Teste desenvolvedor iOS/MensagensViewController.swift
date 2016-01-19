@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MensagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MensagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CustomTabBarViewControllerDelegate {
     
     var listaPessoas = NSMutableArray()
+    var customTabBar: CustomTabBarViewController!
     
     @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -75,6 +76,21 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
+    func customTabBarCliqueBotao(tag: Int) {
+        
+        switch tag {
+        case 0:
+            break
+        case 1:
+            [self .performSegueWithIdentifier("mensagensMinhasVendas", sender: nil)]
+            break
+        case 2:
+            break
+        default:
+            break
+        }
+    }
+    
     // MARK: - Collection view data source
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -127,6 +143,13 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0.0;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "mensagensCustomTabBar") {
+            customTabBar = segue.destinationViewController as! CustomTabBarViewController
+            customTabBar.delegate = self
+        }
     }
 
 }

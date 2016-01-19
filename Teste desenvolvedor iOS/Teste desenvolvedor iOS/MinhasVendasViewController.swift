@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTabBarViewControllerDelegate {
 
     var listaVendas = NSMutableArray()
     var formatter = NSNumberFormatter()
+    var customTabBar: CustomTabBarViewController!
     
-    @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -50,6 +50,21 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
             let venda = Vendas(descricao: "Como decorar uma festa infantil maravilhosa com pouco dinheiro.", identificador: "30294080", data: NSDate(), valor: 1035.0, alert: i < 2)
             listaVendas.addObject(venda)
         }
+    }
+    
+    func customTabBarCliqueBotao(tag: Int) {
+        
+        switch tag {
+        case 0:
+            [self .performSegueWithIdentifier("minhasVendasMensagens", sender: nil)]
+            break
+        case 1:
+            break
+        case 2:
+            break
+        default:
+            break
+           }
     }
     
     // MARK: - Table view data source
@@ -90,6 +105,13 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "minhasVendasCustomTabBar") {
+            customTabBar = segue.destinationViewController as! CustomTabBarViewController
+            customTabBar.delegate = self
+        }
     }
 
 }
