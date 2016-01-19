@@ -20,6 +20,8 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         super.viewDidLoad()
         self.title = "Mensagens"
         
+        self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#F89F2C")
+        
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
         botaoMenu.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)

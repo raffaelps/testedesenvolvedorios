@@ -20,6 +20,8 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         self.title = "Minhas Vendas"
         
+        self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
+        
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
         botaoMenu.addTarget(self, action:"abrirMenu:", forControlEvents: .TouchUpInside)

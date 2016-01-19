@@ -105,16 +105,19 @@ class MenuTableViewController: UITableViewController {
             switch indexPath.row {
             case 1:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break
             case 2:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MinhasVendas") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break
             case 5:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Mensagens") as! UINavigationController
+                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#e7ad45")
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break
