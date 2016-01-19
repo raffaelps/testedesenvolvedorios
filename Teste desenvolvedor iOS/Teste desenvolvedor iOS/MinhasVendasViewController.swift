@@ -18,7 +18,7 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Minhas Vendas"
+        self.title = NSLocalizedString("Minhas Vendas", comment: "")
         
         self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
         

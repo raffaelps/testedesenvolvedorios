@@ -41,6 +41,7 @@
 		4DE8D2F31C4AD61E00F27232 /* MensagensCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */; };
 		4DE8D2FA1C4C526200F27232 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */; };
 		4DE8D3011C4DA22900F27232 /* UIBorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */; };
+		4DE8D3061C4E35B100F27232 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DE8D3081C4E35B100F27232 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBorderedLabel.swift; sourceTree = "<group>"; };
+		4DE8D3071C4E35B100F27232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4DE8D3091C4E35BF00F27232 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 				4D3B511C1C48571E00801668 /* Imagens */,
 				4D3B510B1C484FBC00801668 /* LaunchScreen.storyboard */,
 				4D3B51061C484FBC00801668 /* Main.storyboard */,
+				4DE8D3081C4E35B100F27232 /* Localizable.strings */,
 			);
 			path = "Teste desenvolvedor iOS";
 			sourceTree = "<group>";
@@ -281,6 +285,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 4D3B50F61C484FBC00801668;
 			productRefGroup = 4D3B51001C484FBC00801668 /* Products */;
@@ -310,6 +315,7 @@
 				4D3B513D1C4A6D8600801668 /* ico_afiliados.png in Resources */,
 				4D3B51381C4A6D8600801668 /* ico_dashboard.png in Resources */,
 				4D3B513C1C4A6D8600801668 /* ico_mensagem.png in Resources */,
+				4DE8D3061C4E35B100F27232 /* Localizable.strings in Resources */,
 				4D3B51601C4AB83600801668 /* ico_menu.png in Resources */,
 				4D3B51391C4A6D8600801668 /* ico_sobre_o_app.png in Resources */,
 			);
@@ -361,6 +367,15 @@
 				4D3B510C1C484FBC00801668 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4DE8D3081C4E35B100F27232 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DE8D3071C4E35B100F27232 /* en */,
+				4DE8D3091C4E35BF00F27232 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

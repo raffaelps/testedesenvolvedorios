@@ -27,7 +27,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Dashboard"
+        self.title = NSLocalizedString("Dashboard", comment: "")
         
         customizarTela()
         recuperarSaldo()

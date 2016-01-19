@@ -18,7 +18,7 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Mensagens"
+        self.title = NSLocalizedString("Mensagens", comment: "")
         
         self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#F89F2C")
         

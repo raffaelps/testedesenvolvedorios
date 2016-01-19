@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Teste desenvolvedor iOS
+
+  Created by Raffael Patrício de Souza on 19/01/16.
+  Copyright © 2016 Raffael Patrício de Souza. All rights reserved.
+*/
+
+"Dashboard" = "Dashboard";
+"Mensagens" = "Messages";
+"Minhas Vendas" = "My Sales";
+"Meus Produtos" = "My Products";
+"Afiliados" = "Affiliates";
+"Notificacoes" = "Notifications";
+"Minha Conta" = "My Account";
+"Sobre o App" = "About App";
