@@ -20,6 +20,15 @@ class MenuTableViewCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        //Percorre as subviews da celula, encontra o UILabel que possui o valor e mantem a cor do background ao ser selecionado.
+        for subview in self.contentView.subviews {
+            if (subview.tag == 2)
+            {
+                let label = subview as! UILabel
+                label.backgroundColor = UIColor.corLaranja()
+            }
+        }
     }
 
 }

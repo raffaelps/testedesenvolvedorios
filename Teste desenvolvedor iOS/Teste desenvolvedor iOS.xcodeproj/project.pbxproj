@@ -19,7 +19,6 @@
 		4D3B51211C4868F500801668 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51201C4868F500801668 /* DashboardViewController.swift */; };
 		4D3B51251C4A647900801668 /* img_perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51241C4A647900801668 /* img_perfil.png */; };
 		4D3B51281C4A64EA00801668 /* PerfilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51271C4A64EA00801668 /* PerfilTableViewCell.swift */; };
-		4D3B512B1C4A664600801668 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B512A1C4A664600801668 /* Pessoa.swift */; };
 		4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */; };
 		4D3B51381C4A6D8600801668 /* ico_dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51301C4A6D8600801668 /* ico_dashboard.png */; };
 		4D3B51391C4A6D8600801668 /* ico_sobre_o_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B51311C4A6D8600801668 /* ico_sobre_o_app.png */; };
@@ -34,7 +33,6 @@
 		4D3B514E1C4AA22300801668 /* ico_alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B514C1C4AA22300801668 /* ico_alert.png */; };
 		4D3B51501C4AA2C100801668 /* VendasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B514F1C4AA2C100801668 /* VendasTableViewCell.swift */; };
 		4D3B51561C4AA4CE00801668 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51551C4AA4CE00801668 /* UIColor.swift */; };
-		4D3B51581C4AA5AD00801668 /* Vendas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51571C4AA5AD00801668 /* Vendas.swift */; };
 		4D3B515C1C4AAB8E00801668 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B515B1C4AAB8E00801668 /* NSDate.swift */; };
 		4D3B51601C4AB83600801668 /* ico_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B515F1C4AB83600801668 /* ico_menu.png */; };
 		4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */; };
@@ -42,6 +40,10 @@
 		4DE8D2FA1C4C526200F27232 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */; };
 		4DE8D3011C4DA22900F27232 /* UIBorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */; };
 		4DE8D3061C4E35B100F27232 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DE8D3081C4E35B100F27232 /* Localizable.strings */; };
+		4DE8D3151C4EF67B00F27232 /* Contato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D3141C4EF67B00F27232 /* Contato.swift */; };
+		4DE8D3171C4EF6C300F27232 /* ServicoContato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D3161C4EF6C300F27232 /* ServicoContato.swift */; };
+		4DE8D31B1C4F07B600F27232 /* Venda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D31A1C4F07B600F27232 /* Venda.swift */; };
+		4DE8D31F1C4F08B000F27232 /* ServicoVenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D31E1C4F08B000F27232 /* ServicoVenda.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +61,6 @@
 		4D3B51201C4868F500801668 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		4D3B51241C4A647900801668 /* img_perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_perfil.png; sourceTree = "<group>"; };
 		4D3B51271C4A64EA00801668 /* PerfilTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilTableViewCell.swift; sourceTree = "<group>"; };
-		4D3B512A1C4A664600801668 /* Pessoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 		4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		4D3B51301C4A6D8600801668 /* ico_dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_dashboard.png; sourceTree = "<group>"; };
 		4D3B51311C4A6D8600801668 /* ico_sobre_o_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_sobre_o_app.png; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		4D3B514C1C4AA22300801668 /* ico_alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_alert.png; sourceTree = "<group>"; };
 		4D3B514F1C4AA2C100801668 /* VendasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendasTableViewCell.swift; sourceTree = "<group>"; };
 		4D3B51551C4AA4CE00801668 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		4D3B51571C4AA5AD00801668 /* Vendas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vendas.swift; sourceTree = "<group>"; };
 		4D3B515B1C4AAB8E00801668 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		4D3B515F1C4AB83600801668 /* ico_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_menu.png; sourceTree = "<group>"; };
 		4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +83,10 @@
 		4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBorderedLabel.swift; sourceTree = "<group>"; };
 		4DE8D3071C4E35B100F27232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4DE8D3091C4E35BF00F27232 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4DE8D3141C4EF67B00F27232 /* Contato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contato.swift; sourceTree = "<group>"; };
+		4DE8D3161C4EF6C300F27232 /* ServicoContato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicoContato.swift; sourceTree = "<group>"; };
+		4DE8D31A1C4F07B600F27232 /* Venda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venda.swift; sourceTree = "<group>"; };
+		4DE8D31E1C4F08B000F27232 /* ServicoVenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicoVenda.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +143,6 @@
 				4D3B515B1C4AAB8E00801668 /* NSDate.swift */,
 				4D3B51551C4AA4CE00801668 /* UIColor.swift */,
 				4D3B51151C48511B00801668 /* KYDrawerController */,
-				4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */,
 			);
 			name = Bibliotecas;
 			sourceTree = "<group>";
@@ -207,8 +210,8 @@
 		4D3B51291C4A663000801668 /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
-				4D3B512A1C4A664600801668 /* Pessoa.swift */,
-				4D3B51571C4AA5AD00801668 /* Vendas.swift */,
+				4DE8D3141C4EF67B00F27232 /* Contato.swift */,
+				4DE8D31A1C4F07B600F27232 /* Venda.swift */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -231,6 +234,8 @@
 		4DE8D2F61C4C039E00F27232 /* Servicos */ = {
 			isa = PBXGroup;
 			children = (
+				4DE8D3161C4EF6C300F27232 /* ServicoContato.swift */,
+				4DE8D31E1C4F08B000F27232 /* ServicoVenda.swift */,
 			);
 			name = Servicos;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */,
+				4DE8D3001C4DA22900F27232 /* UIBorderedLabel.swift */,
 			);
 			name = Componentes;
 			sourceTree = "<group>";
@@ -328,25 +334,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D3B51581C4AA5AD00801668 /* Vendas.swift in Sources */,
 				4D3B511A1C48515D00801668 /* KYEmbedDrawerControllerSegue.swift in Sources */,
 				4DE8D3011C4DA22900F27232 /* UIBorderedLabel.swift in Sources */,
 				4D3B51281C4A64EA00801668 /* PerfilTableViewCell.swift in Sources */,
 				4D3B51211C4868F500801668 /* DashboardViewController.swift in Sources */,
 				4D3B515C1C4AAB8E00801668 /* NSDate.swift in Sources */,
+				4DE8D31B1C4F07B600F27232 /* Venda.swift in Sources */,
 				4D3B514A1C4A95A400801668 /* MinhasVendasViewController.swift in Sources */,
+				4DE8D3151C4EF67B00F27232 /* Contato.swift in Sources */,
 				4D3B51191C48515D00801668 /* KYDrawerController.swift in Sources */,
 				4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */,
 				4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */,
-				4D3B512B1C4A664600801668 /* Pessoa.swift in Sources */,
 				4D3B511F1C48674F00801668 /* MenuTableViewController.swift in Sources */,
 				4DE8D2F31C4AD61E00F27232 /* MensagensCollectionViewCell.swift in Sources */,
 				4D3B51501C4AA2C100801668 /* VendasTableViewCell.swift in Sources */,
 				4D3B51561C4AA4CE00801668 /* UIColor.swift in Sources */,
 				4DE8D2FA1C4C526200F27232 /* CustomTabBarViewController.swift in Sources */,
+				4DE8D3171C4EF6C300F27232 /* ServicoContato.swift in Sources */,
 				4D3B511B1C48515D00801668 /* KYEmbedMainControllerSegue.swift in Sources */,
 				4D3B51051C484FBC00801668 /* ViewController.swift in Sources */,
 				4D3B51031C484FBC00801668 /* AppDelegate.swift in Sources */,
+				4DE8D31F1C4F08B000F27232 /* ServicoVenda.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

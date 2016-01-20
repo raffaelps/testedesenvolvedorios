@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    var usuarioLogado: Pessoa!
+    var usuarioLogado: NSDictionary!
     var opcoesMenu: NSMutableArray!
 
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class MenuTableViewController: UITableViewController {
     }
     
     func carregarDadosUsuario() {
-        usuarioLogado = Pessoa(nome: "RICARDO AC", email: "ricardoac@email.com", imagem: UIImage(named: "img_perfil.png"), mensagem: false)
+        usuarioLogado = NSDictionary(objects: ["Ricardo AC", "ricardoac@email.com", UIImage(named: "img_perfil.png")!], forKeys: ["nome", "email", "imagem"])
     }
 
     // MARK: - Table view data source
@@ -64,10 +64,10 @@ class MenuTableViewController: UITableViewController {
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("PerfilTableViewCell", forIndexPath: indexPath) as! PerfilTableViewCell
             
-            cell.nomePerfil.text = usuarioLogado.nome
-            cell.emailPerfil.text = usuarioLogado.email
-            cell.imagemPerfil.image = usuarioLogado.imagem
-            cell.imagemBackground.image = usuarioLogado.imagem
+            cell.nomePerfil.text = (usuarioLogado.objectForKey("nome") as? String)?.uppercaseString
+            cell.emailPerfil.text = usuarioLogado.objectForKey("email") as? String
+            cell.imagemPerfil.image = usuarioLogado.objectForKey("imagem") as? UIImage
+            cell.imagemBackground.image = usuarioLogado.objectForKey("imagem") as? UIImage
             
             cell.selectionStyle = .None
             
@@ -105,19 +105,19 @@ class MenuTableViewController: UITableViewController {
             switch indexPath.row {
             case 1:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
-                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#d04f2a")
+                mainNavigation.navigationBar.barTintColor = UIColor.corVermelhoN2()
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break
             case 2:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MinhasVendas") as! UINavigationController
-                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
+                mainNavigation.navigationBar.barTintColor = UIColor.corAzul()
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break
             case 5:
                 let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Mensagens") as! UINavigationController
-                mainNavigation.navigationBar.barTintColor = UIColor.colorWithHexString("#e7ad45")
+                mainNavigation.navigationBar.barTintColor = UIColor.corLaranja()
                 drawerController.mainViewController = mainNavigation
                 drawerController.setDrawerState(.Closed, animated: true)
                 break

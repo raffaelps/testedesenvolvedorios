@@ -10,7 +10,7 @@ import UIKit
 
 class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTabBarViewControllerDelegate {
 
-    var listaVendas = NSMutableArray()
+    var listaVendas = NSArray()
     var formatter = NSNumberFormatter()
     var customTabBar: CustomTabBarViewController!
     
@@ -20,7 +20,7 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         self.title = NSLocalizedString("Minhas Vendas", comment: "")
         
-        self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#4982c5")
+        self.navigationController!.navigationBar.barTintColor = UIColor.corAzul()
         
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
@@ -48,10 +48,7 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
     
     func carregarVendas() {
  
-        for (var i = 0; i < 10; i++) {
-            let venda = Vendas(descricao: "Como decorar uma festa infantil maravilhosa com pouco dinheiro.", identificador: "30294080", data: NSDate(), valor: 1035.0, alert: i < 2)
-            listaVendas.addObject(venda)
-        }
+        listaVendas = ServicoVenda.recuperarVendas(20)
     }
     
     func customTabBarCliqueBotao(tag: Int) {
@@ -83,17 +80,17 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCellWithIdentifier("VendasTableViewCell", forIndexPath: indexPath) as! VendasTableViewCell
         
-        let venda = listaVendas.objectAtIndex(indexPath.row) as! Vendas
+        let venda = listaVendas.objectAtIndex(indexPath.row) as! Venda
         cell.descricaoVenda.text = venda.descricao
         cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
         cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
         cell.alertaVenda.hidden = !venda.alert
         
         if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.colorWithHexString("#f4f4f4")
+            cell.backgroundColor = UIColor.corCinzaN1()
         }
         else {
-            cell.backgroundColor = UIColor.colorWithHexString("#ffffff")
+            cell.backgroundColor = UIColor.whiteColor()
         }
         
         return cell

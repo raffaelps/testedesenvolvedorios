@@ -21,7 +21,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var valorMensagens: UILabel!
     @IBOutlet weak var scrollMensagens: UIScrollView!
     
-    var listaVendas = NSMutableArray()
+    var listaVendas = NSArray()
     var formatter = NSNumberFormatter()
     var customTabBar: CustomTabBarViewController!
     
@@ -31,8 +31,27 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         customizarTela()
         recuperarSaldo()
-        recuperarMensagens()
+        recuperarContatosMensagens()
         carregarVendas()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        let bordaInferior = CALayer()
+        bordaInferior.backgroundColor = UIColor.corCinzaN1().CGColor
+        bordaInferior.frame = CGRectMake(0, CGRectGetHeight(self.viewMensagens.frame) - 1.0, CGRectGetWidth(self.viewMensagens.frame), 1.0)
+        self.viewMensagens.layer.addSublayer(bordaInferior)
+        
+        let bordaLateralMensagens = CALayer()
+        bordaLateralMensagens.backgroundColor = UIColor.corLaranja().CGColor
+        bordaLateralMensagens.frame = CGRectMake(CGRectGetWidth(self.viewMensagens.frame) - 4.0, 0.0, 4.0, CGRectGetHeight(self.viewMensagens.frame))
+        self.viewMensagens.layer.addSublayer(bordaLateralMensagens)
+        
+        let bordaLateralMinhasVendas = CALayer()
+        bordaLateralMinhasVendas.backgroundColor = UIColor.corAzul().CGColor
+        bordaLateralMinhasVendas.frame = CGRectMake(CGRectGetWidth(self.tableView.frame) - 4.0, CGRectGetMinY(self.tableView.frame), 4.0, CGRectGetHeight(self.tableView.frame))
+        self.view.layer.addSublayer(bordaLateralMinhasVendas)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +63,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.tableView.separatorStyle = .None
         
-        navigationController?.navigationBar.barTintColor = UIColor.colorWithHexString("#E9351B")
+        navigationController?.navigationBar.barTintColor = UIColor.corVermelhoN2()
         navigationController?.navigationBar.translucent = false
         
         //Retirar borda abaixo da navigation bar
@@ -65,8 +84,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tituloSaldo.text = "Seu saldo atual é de:"
         self.tituloMensagens.text = "Mensagens recentes"
         self.valorMensagens.text = "+10"
-        
-        
+
     }
     
     func customTabBarCliqueBotao(tag: Int) {
@@ -95,13 +113,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.valorSaldo.text = formatter.stringFromNumber(2152.23)
     }
     
-    func recuperarMensagens() {
+    func recuperarContatosMensagens() {
+        preencherScrollViewMensagens(ServicoContato.recuperarContatos(8))
+    }
+    
+    func preencherScrollViewMensagens(listaContatos: NSArray) {
         
         var posicaoX : CGFloat = 0.0
         
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < listaContatos.count; i++) {
             
-            let imagemPerfil = UIImageView(frame: CGRectMake(posicaoX, 0, 75, 75))
+            let imagemPerfil = UIImageView(frame: CGRectMake(posicaoX, 0, 74, 74))
             imagemPerfil.contentMode = .ScaleAspectFill
             imagemPerfil.layer.cornerRadius = imagemPerfil.frame.size.width / 2;
             imagemPerfil.clipsToBounds = true
@@ -115,70 +137,42 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let nomePerfil = UILabel(frame: CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, CGRectGetWidth(imagemPerfil.frame), 15))
             nomePerfil.textAlignment = .Center
-            nomePerfil.textColor = UIColor.colorWithHexString("#919191")
+            nomePerfil.textColor = UIColor.corCinzaN3()
             nomePerfil.font = UIFont(name: "Helvetica", size: 13)
             nomePerfil.numberOfLines = 0
             
-            var pessoa = Pessoa!()
-            let random = Int(arc4random_uniform(4))
-            
-            switch random {
-            case 0:
-                pessoa = Pessoa(nome: "Pedro Matos", email: "", imagem: UIImage(named: "img_perfil.png"), mensagem: true)
-                break
-            case 1:
-                pessoa = Pessoa(nome: "Valéria Ciqueira", email: "", imagem: nil, mensagem: false)
-                break
-            case 2:
-                pessoa = Pessoa(nome: "Maria Carol", email: "", imagem: nil, mensagem: true)
-                break
-            default:
-                pessoa = Pessoa(nome: "Flávia de Alcantara", email: "", imagem: nil, mensagem: false)
-                break
+            let contato = listaContatos.objectAtIndex(i) as! Contato
+
+            if (contato.imagem != nil) {
+                imagemPerfil.image = contato.imagem
+            }
+            else {
+                iconePerfil.text = contato.caracterNome
+                iconePerfil.backgroundColor = contato.corAtribuida
             }
             
-            if (pessoa.imagem != nil) {
-                imagemPerfil.image = pessoa.imagem
-            }
-            else if (!pessoa.nome.isEmpty) {
-                
-                iconePerfil.text = String(pessoa.nome[pessoa.nome.startIndex])
-                
-                let random = Int(arc4random_uniform(3))
-                
-                switch random {
-                case 0:
-                    iconePerfil.backgroundColor = UIColor.colorWithHexString("#a3c74b")
-                    break
-                case 1:
-                    iconePerfil.backgroundColor = UIColor.colorWithHexString("#ce4251")
-                    break
-                default:
-                    iconePerfil.backgroundColor = UIColor.colorWithHexString("#5f498c")
-                    break
-                }
-            }
-            
-            nomePerfil.text = pessoa.nome
+            nomePerfil.text = contato.nome
             nomePerfil.sizeToFit()
-            nomePerfil.frame = CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, 75, CGRectGetHeight(nomePerfil.frame))
+            nomePerfil.frame = CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, 74, CGRectGetHeight(nomePerfil.frame))
             
             self.scrollMensagens.addSubview(imagemPerfil)
             self.scrollMensagens.addSubview(iconePerfil)
             self.scrollMensagens.addSubview(nomePerfil)
             
-            posicaoX += 27.0 + imagemPerfil.frame.size.width
+            posicaoX += imagemPerfil.frame.size.width
+            
+            // Não adiciona a diferença entre as imagens para o último contato
+            if (i != (listaContatos.count - 1)) {
+                posicaoX += 27.0
+            }
         }
         
-        self.scrollMensagens.contentSize.width = CGFloat(posicaoX - 27.0)
+        self.scrollMensagens.contentSize.width = CGFloat(posicaoX)
     }
 
     func carregarVendas() {
         
-        for (var i = 0; i < 10; i++) {
-            let venda = Vendas(descricao: "Como decorar uma festa infantil maravilhosa com pouco dinheiro.", identificador: "30294080", data: NSDate(), valor: 1035.0, alert: i < 2)
-            listaVendas.addObject(venda)
-        }
+        listaVendas = ServicoVenda.recuperarVendas(5)
     }
     
     // MARK: - Table view data source
@@ -195,17 +189,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let cell = tableView.dequeueReusableCellWithIdentifier("VendasTableViewCell", forIndexPath: indexPath) as! VendasTableViewCell
         
-        let venda = listaVendas.objectAtIndex(indexPath.row) as! Vendas
+        let venda = listaVendas.objectAtIndex(indexPath.row) as! Venda
         cell.descricaoVenda.text = venda.descricao
         cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
         cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
         cell.alertaVenda.hidden = !venda.alert
         
         if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.colorWithHexString("#f4f4f4")
+            cell.backgroundColor = UIColor.corCinzaN1()
         }
         else {
-            cell.backgroundColor = UIColor.colorWithHexString("#ffffff")
+            cell.backgroundColor = UIColor.whiteColor()
         }
         
         return cell

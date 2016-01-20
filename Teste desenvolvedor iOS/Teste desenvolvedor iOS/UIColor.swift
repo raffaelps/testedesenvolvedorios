@@ -9,6 +9,67 @@
 import UIKit
 
 extension UIColor {
+    
+    class func corAleatoria() -> UIColor {
+        
+        var retorno = UIColor!()
+        let random = Int(arc4random_uniform(3))
+        
+        switch random {
+        case 0:
+            retorno = UIColor.corVerde()
+            break
+        case 1:
+            retorno = UIColor.corVermelhoN1()
+            break
+        default:
+            retorno = UIColor.corRoxo()
+            break
+        }
+        
+        return retorno
+    }
+    
+    class func corLaranja() -> UIColor {
+        return self.colorWithHexString("#F89F2C")
+    }
+    
+    class func corVerde() -> UIColor {
+        return self.colorWithHexString("#a3c74b")
+    }
+    
+    class func corVermelhoN1() -> UIColor {
+        return self.colorWithHexString("#ce4251")
+    }
+    
+    class func corVermelhoN2() -> UIColor {
+        return self.colorWithHexString("#E8351B")
+    }
+    
+    class func corAzul() -> UIColor {
+        return self.colorWithHexString("#196EBC")
+    }
+    
+    class func corRoxo() -> UIColor {
+        return self.colorWithHexString("#5f498c")
+    }
+    
+    class func corCinzaN4() -> UIColor {
+        return self.colorWithHexString("#535353")
+    }
+    
+    class func corCinzaN3() -> UIColor {
+        return self.colorWithHexString("#919191")
+    }
+    
+    class func corCinzaN2() -> UIColor {
+        return self.colorWithHexString("#b6b2a8")
+    }
+    
+    class func corCinzaN1() -> UIColor {
+        return self.colorWithHexString("#f4f4f4")
+    }
+    
     class func colorWithHexString (hex:AnyObject) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         

@@ -10,7 +10,7 @@ import UIKit
 
 class MensagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CustomTabBarViewControllerDelegate {
     
-    var listaPessoas = NSMutableArray()
+    var listaContatos = NSArray()
     var customTabBar: CustomTabBarViewController!
     
     @IBOutlet weak var tabBar: UIView!
@@ -20,7 +20,7 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         super.viewDidLoad()
         self.title = NSLocalizedString("Mensagens", comment: "")
         
-        self.navigationController!.navigationBar.barTintColor = UIColor.colorWithHexString("#F89F2C")
+        self.navigationController!.navigationBar.barTintColor = UIColor.corLaranja()
         
         let botaoMenu = UIButton()
         botaoMenu.setImage(UIImage(named: "ico_menu.png"), forState: .Normal)
@@ -42,7 +42,8 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         
-        carregarMensagens()
+        listaContatos = ServicoContato.recuperarContatos(40)
+        self.collectionView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,29 +53,6 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
     func abrirMenu(sender: UIButton) {
         if let drawerController = navigationController?.parentViewController as? KYDrawerController {
             drawerController.setDrawerState(.Opened, animated: true)
-        }
-    }
-    
-    func carregarMensagens() {
-        
-        for (var i = 0; i < 28; i++) {
-            
-            let random = Int(arc4random_uniform(4))
-            
-            switch random {
-            case 0:
-                listaPessoas.addObject(Pessoa(nome: "Pedro Matos", email: "", imagem: UIImage(named: "img_perfil.png"), mensagem: true))
-                break
-            case 1:
-                listaPessoas.addObject(Pessoa(nome: "Valéria Ciqueira", email: "", imagem: nil, mensagem: false))
-                break
-            case 2:
-                listaPessoas.addObject(Pessoa(nome: "Maria Carol", email: "", imagem: nil, mensagem: true))
-                break
-            default:
-                listaPessoas.addObject(Pessoa(nome: "Flávia de Alcantara", email: "", imagem: nil, mensagem: false))
-                break
-            }
         }
     }
     
@@ -100,36 +78,26 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listaPessoas.count
+        return listaContatos.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MensagensCollectionViewCell", forIndexPath: indexPath) as! MensagensCollectionViewCell
         
-        let pessoa = listaPessoas.objectAtIndex(indexPath.row) as! Pessoa
-        cell.nomePerfil.text = pessoa.nome
-        cell.alertaPerfil.hidden = !pessoa.mensagem
+        let contato = listaContatos.objectAtIndex(indexPath.row) as! Contato
+        cell.nomePerfil.text = contato.nome
+        cell.alertaPerfil.hidden = !contato.alertaMensagem
         
-        if (pessoa.imagem != nil) {
-            cell.imagemPerfil.image = pessoa.imagem
+        if (contato.imagem != nil) {
+            cell.imagemPerfil.image = contato.imagem
+            cell.imagemPerfil.hidden = false
+            cell.iconePerfil.hidden = true
         }
-        else if (!pessoa.nome.isEmpty) {
-            
-            cell.iconePerfil.text = String(pessoa.nome[pessoa.nome.startIndex])
-            
-            let random = Int(arc4random_uniform(3))
-            
-            switch random {
-            case 0:
-                cell.iconePerfil.backgroundColor = UIColor.colorWithHexString("#a3c74b")
-                break
-            case 1:
-                cell.iconePerfil.backgroundColor = UIColor.colorWithHexString("#ce4251")
-                break
-            default:
-                cell.iconePerfil.backgroundColor = UIColor.colorWithHexString("#5f498c")
-                break
-            }
+        else {
+            cell.iconePerfil.text = contato.caracterNome
+            cell.iconePerfil.backgroundColor = contato.corAtribuida
+            cell.imagemPerfil.hidden = true
+            cell.iconePerfil.hidden = false
         }
 
         return cell

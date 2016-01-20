@@ -1,14 +1,14 @@
 //
-//  Vendas.swift
+//  Venda.swift
 //  Teste desenvolvedor iOS
 //
-//  Created by Raffael Patrício de Souza on 16/01/16.
+//  Created by Raffael Patrício de Souza on 19/01/16.
 //  Copyright © 2016 Raffael Patrício de Souza. All rights reserved.
 //
 
 import UIKit
 
-class Vendas: NSObject {
+class Venda: NSObject {
 
     var descricao: String = ""
     var identificador: String = ""
