@@ -10,16 +10,24 @@ import UIKit
 
 class MensagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CustomTabBarViewControllerDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var listaContatos = NSArray()
     var customTabBar: CustomTabBarViewController!
-    
-    @IBOutlet weak var tabBar: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Mensagens", comment: "")
         
+        customizarTela()
+        recuperarContatosMensagens()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func customizarTela() {
         self.navigationController!.navigationBar.barTintColor = UIColor.corLaranja()
         
         let botaoMenu = UIButton()
@@ -45,19 +53,17 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         flowLayout.minimumInteritemSpacing = 26.0
         flowLayout.scrollDirection = .Vertical
         collectionView.collectionViewLayout = flowLayout
-        
-        listaContatos = ServicoContato.recuperarContatos(40)
-        self.collectionView.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func abrirMenu(sender: UIButton) {
         if let drawerController = navigationController?.parentViewController as? KYDrawerController {
             drawerController.setDrawerState(.Opened, animated: true)
         }
+    }
+    
+    func recuperarContatosMensagens() {
+        listaContatos = ServicoContato.recuperarContatos(40)
+        self.collectionView.reloadData()
     }
     
     func customTabBarCliqueBotao(tag: Int) {

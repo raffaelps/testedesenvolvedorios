@@ -9,17 +9,26 @@
 import UIKit
 
 class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTabBarViewControllerDelegate {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var listaVendas = NSArray()
     var formatter = NSNumberFormatter()
     var customTabBar: CustomTabBarViewController!
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Minhas Vendas", comment: "")
         
+        customizarTela()
+        carregarVendas()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func customizarTela() {
         self.navigationController!.navigationBar.barTintColor = UIColor.corAzul()
         
         let botaoMenu = UIButton()
@@ -30,14 +39,8 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationItem.leftBarButtonItem = barButton
         
         formatter.numberStyle = .CurrencyStyle
-
-        self.tableView.separatorStyle = .None
         
-        carregarVendas()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        self.tableView.separatorStyle = .None
     }
     
     func abrirMenu(sender: UIButton) {

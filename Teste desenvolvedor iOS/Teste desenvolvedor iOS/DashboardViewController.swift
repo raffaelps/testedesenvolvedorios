@@ -10,8 +10,6 @@ import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CustomTabBarViewControllerDelegate {
 
-    @IBOutlet weak var tabBar: UIView!
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tituloSaldo: UILabel!
     @IBOutlet weak var valorSaldo: UILabel!
@@ -33,7 +31,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func customizarTela() {
