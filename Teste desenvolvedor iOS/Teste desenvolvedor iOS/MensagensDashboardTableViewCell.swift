@@ -16,7 +16,17 @@ class MensagensDashboardTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let bordaInferior = CALayer()
+        bordaInferior.backgroundColor = UIColor.corCinzaN1().CGColor
+        bordaInferior.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 1.0, CGRectGetWidth(self.contentView.frame), 1.0)
+        self.contentView.layer.addSublayer(bordaInferior)
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .Horizontal
+        flowLayout.minimumInteritemSpacing = 27.0
+        self.collectionMensagens.collectionViewLayout = flowLayout
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

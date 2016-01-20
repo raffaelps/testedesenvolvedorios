@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, CustomTabBarViewControllerDelegate {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CustomTabBarViewControllerDelegate {
 
     @IBOutlet weak var tabBar: UIView!
     
@@ -29,25 +29,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         recuperarSaldo()
         recuperarContatosMensagens()
         carregarVendas()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-//        let bordaInferior = CALayer()
-//        bordaInferior.backgroundColor = UIColor.corCinzaN1().CGColor
-//        bordaInferior.frame = CGRectMake(0, CGRectGetHeight(self.viewMensagens.frame) - 1.0, CGRectGetWidth(self.viewMensagens.frame), 1.0)
-//        self.viewMensagens.layer.addSublayer(bordaInferior)
-//        
-//        let bordaLateralMensagens = CALayer()
-//        bordaLateralMensagens.backgroundColor = UIColor.corLaranja().CGColor
-//        bordaLateralMensagens.frame = CGRectMake(CGRectGetWidth(self.viewMensagens.frame) - 4.0, 0.0, 4.0, CGRectGetHeight(self.viewMensagens.frame))
-//        self.viewMensagens.layer.addSublayer(bordaLateralMensagens)
-        
-        let bordaLateralMinhasVendas = CALayer()
-        bordaLateralMinhasVendas.backgroundColor = UIColor.corAzul().CGColor
-        bordaLateralMinhasVendas.frame = CGRectMake(CGRectGetWidth(self.tableView.frame) - 4.0, CGRectGetMinY(self.tableView.frame), 4.0, CGRectGetHeight(self.tableView.frame))
-        self.view.layer.addSublayer(bordaLateralMinhasVendas)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -133,6 +114,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.tituloMensagens.text = NSLocalizedString("Mensagens recentes", comment: "")
             cell.numeroMensagens.text = "+10"
             
+            let bordaLateralMensagens = CALayer()
+            bordaLateralMensagens.backgroundColor = UIColor.corLaranja().CGColor
+            bordaLateralMensagens.frame = CGRectMake(CGRectGetWidth(cell.contentView.frame) - 4.0, 0.0, 4.0, CGRectGetHeight(cell.contentView.frame))
+            cell.contentView.layer.addSublayer(bordaLateralMensagens)
+            
             return cell
         }
         else {
@@ -150,6 +136,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             else {
                 cell.backgroundColor = UIColor.whiteColor()
             }
+            
+            let bordaLateralMinhasVendas = CALayer()
+            bordaLateralMinhasVendas.backgroundColor = UIColor.corAzul().CGColor
+            bordaLateralMinhasVendas.frame = CGRectMake(CGRectGetWidth(cell.contentView.frame) - 4.0, CGRectGetMinY(cell.contentView.frame), 4.0, CGRectGetHeight(cell.contentView.frame))
+            cell.contentView.layer.addSublayer(bordaLateralMinhasVendas)
             
             return cell
         }
@@ -204,15 +195,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 88.5, height: 135)
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0.0, left: 0, bottom: 0.0, right: 0)
+        return CGSize(width: 101, height: 138)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0.0;
+        return 0.0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 18.0, bottom: 0.0, right: -12.0)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

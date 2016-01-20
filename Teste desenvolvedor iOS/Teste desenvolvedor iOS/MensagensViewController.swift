@@ -40,7 +40,11 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
         let barBotaoNumeroMensagens = UIBarButtonItem(customView: numeroMensagens)
         self.navigationItem.rightBarButtonItem = barBotaoNumeroMensagens
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 26.0
+        flowLayout.scrollDirection = .Vertical
+        collectionView.collectionViewLayout = flowLayout
         
         listaContatos = ServicoContato.recuperarContatos(40)
         self.collectionView.reloadData()
@@ -104,15 +108,7 @@ class MensagensViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 88.5, height: 135)
-    }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0.0, left: 0, bottom: 0.0, right: 0)
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0.0;
+        return CGSize(width: 74, height: 135)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
