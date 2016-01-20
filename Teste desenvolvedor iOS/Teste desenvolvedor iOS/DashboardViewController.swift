@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTabBarViewControllerDelegate {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, CustomTabBarViewControllerDelegate {
 
     @IBOutlet weak var tabBar: UIView!
     
@@ -16,12 +16,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tituloSaldo: UILabel!
     @IBOutlet weak var valorSaldo: UILabel!
     
-    @IBOutlet weak var viewMensagens: UIView!
-    @IBOutlet weak var tituloMensagens: UILabel!
-    @IBOutlet weak var valorMensagens: UILabel!
-    @IBOutlet weak var scrollMensagens: UIScrollView!
-    
     var listaVendas = NSArray()
+    var listaContatos = NSArray()
     var formatter = NSNumberFormatter()
     var customTabBar: CustomTabBarViewController!
     
@@ -37,15 +33,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLayoutSubviews() {
         
-        let bordaInferior = CALayer()
-        bordaInferior.backgroundColor = UIColor.corCinzaN1().CGColor
-        bordaInferior.frame = CGRectMake(0, CGRectGetHeight(self.viewMensagens.frame) - 1.0, CGRectGetWidth(self.viewMensagens.frame), 1.0)
-        self.viewMensagens.layer.addSublayer(bordaInferior)
-        
-        let bordaLateralMensagens = CALayer()
-        bordaLateralMensagens.backgroundColor = UIColor.corLaranja().CGColor
-        bordaLateralMensagens.frame = CGRectMake(CGRectGetWidth(self.viewMensagens.frame) - 4.0, 0.0, 4.0, CGRectGetHeight(self.viewMensagens.frame))
-        self.viewMensagens.layer.addSublayer(bordaLateralMensagens)
+//        let bordaInferior = CALayer()
+//        bordaInferior.backgroundColor = UIColor.corCinzaN1().CGColor
+//        bordaInferior.frame = CGRectMake(0, CGRectGetHeight(self.viewMensagens.frame) - 1.0, CGRectGetWidth(self.viewMensagens.frame), 1.0)
+//        self.viewMensagens.layer.addSublayer(bordaInferior)
+//        
+//        let bordaLateralMensagens = CALayer()
+//        bordaLateralMensagens.backgroundColor = UIColor.corLaranja().CGColor
+//        bordaLateralMensagens.frame = CGRectMake(CGRectGetWidth(self.viewMensagens.frame) - 4.0, 0.0, 4.0, CGRectGetHeight(self.viewMensagens.frame))
+//        self.viewMensagens.layer.addSublayer(bordaLateralMensagens)
         
         let bordaLateralMinhasVendas = CALayer()
         bordaLateralMinhasVendas.backgroundColor = UIColor.corAzul().CGColor
@@ -81,9 +77,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         formatter.numberStyle = .CurrencyStyle
         
-        self.tituloSaldo.text = "Seu saldo atual é de:"
-        self.tituloMensagens.text = "Mensagens recentes"
-        self.valorMensagens.text = "+10"
+        self.tituloSaldo.text = NSLocalizedString("Seu saldo atual e de:", comment: "")
 
     }
     
@@ -114,64 +108,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func recuperarContatosMensagens() {
-        preencherScrollViewMensagens(ServicoContato.recuperarContatos(8))
+        listaContatos = ServicoContato.recuperarContatos(8)
     }
     
-    func preencherScrollViewMensagens(listaContatos: NSArray) {
-        
-        var posicaoX : CGFloat = 0.0
-        
-        for (var i = 0; i < listaContatos.count; i++) {
-            
-            let imagemPerfil = UIImageView(frame: CGRectMake(posicaoX, 0, 74, 74))
-            imagemPerfil.contentMode = .ScaleAspectFill
-            imagemPerfil.layer.cornerRadius = imagemPerfil.frame.size.width / 2;
-            imagemPerfil.clipsToBounds = true
-            
-            let iconePerfil = UILabel(frame: imagemPerfil.frame)
-            iconePerfil.textAlignment = .Center
-            iconePerfil.textColor = UIColor.whiteColor()
-            iconePerfil.font = UIFont(name: "Helvetica", size: 33)
-            iconePerfil.layer.cornerRadius = imagemPerfil.frame.size.width / 2;
-            iconePerfil.clipsToBounds = true
-            
-            let nomePerfil = UILabel(frame: CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, CGRectGetWidth(imagemPerfil.frame), 15))
-            nomePerfil.textAlignment = .Center
-            nomePerfil.textColor = UIColor.corCinzaN3()
-            nomePerfil.font = UIFont(name: "Helvetica", size: 13)
-            nomePerfil.numberOfLines = 0
-            
-            let contato = listaContatos.objectAtIndex(i) as! Contato
-
-            if (contato.imagem != nil) {
-                imagemPerfil.image = contato.imagem
-            }
-            else {
-                iconePerfil.text = contato.caracterNome
-                iconePerfil.backgroundColor = contato.corAtribuida
-            }
-            
-            nomePerfil.text = contato.nome
-            nomePerfil.sizeToFit()
-            nomePerfil.frame = CGRectMake(posicaoX, CGRectGetMaxY(imagemPerfil.frame) + 3, 74, CGRectGetHeight(nomePerfil.frame))
-            
-            self.scrollMensagens.addSubview(imagemPerfil)
-            self.scrollMensagens.addSubview(iconePerfil)
-            self.scrollMensagens.addSubview(nomePerfil)
-            
-            posicaoX += imagemPerfil.frame.size.width
-            
-            // Não adiciona a diferença entre as imagens para o último contato
-            if (i != (listaContatos.count - 1)) {
-                posicaoX += 27.0
-            }
-        }
-        
-        self.scrollMensagens.contentSize.width = CGFloat(posicaoX)
-    }
-
     func carregarVendas() {
-        
         listaVendas = ServicoVenda.recuperarVendas(5)
     }
     
@@ -182,37 +122,97 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaVendas.count
+        return listaVendas.count + 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("VendasTableViewCell", forIndexPath: indexPath) as! VendasTableViewCell
-        
-        let venda = listaVendas.objectAtIndex(indexPath.row) as! Venda
-        cell.descricaoVenda.text = venda.descricao
-        cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
-        cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
-        cell.alertaVenda.hidden = !venda.alert
-        
-        if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.corCinzaN1()
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("MensagensDashboardTableViewCell", forIndexPath: indexPath) as! MensagensDashboardTableViewCell
+            
+            cell.tituloMensagens.text = NSLocalizedString("Mensagens recentes", comment: "")
+            cell.numeroMensagens.text = "+10"
+            
+            return cell
         }
         else {
-            cell.backgroundColor = UIColor.whiteColor()
+            let cell = tableView.dequeueReusableCellWithIdentifier("VendasTableViewCell", forIndexPath: indexPath) as! VendasTableViewCell
+            
+            let venda = listaVendas.objectAtIndex(indexPath.row - 1) as! Venda
+            cell.descricaoVenda.text = venda.descricao
+            cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
+            cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
+            cell.alertaVenda.hidden = !venda.alert
+            
+            if (indexPath.row % 2 == 0) {
+                cell.backgroundColor = UIColor.corCinzaN1()
+            }
+            else {
+                cell.backgroundColor = UIColor.whiteColor()
+            }
+            
+            return cell
         }
-        
-        return cell
         
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let collectionCell = cell as? MensagensDashboardTableViewCell
+        collectionCell?.collectionMensagens.delegate = self
+        collectionCell?.collectionMensagens.dataSource = self
+        collectionCell?.collectionMensagens.reloadData()
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 115
+        return indexPath.row == 0 ? 201 : 115
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    // MARK: - Collection view data source
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listaContatos.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MensagensCollectionViewCell", forIndexPath: indexPath) as! MensagensCollectionViewCell
         
+        let contato = listaContatos.objectAtIndex(indexPath.row) as! Contato
+        cell.nomePerfil.text = contato.nome
+        cell.alertaPerfil.hidden = !contato.alertaMensagem
+        
+        if (contato.imagem != nil) {
+            cell.imagemPerfil.image = contato.imagem
+            cell.imagemPerfil.hidden = false
+            cell.iconePerfil.hidden = true
+        }
+        else {
+            cell.iconePerfil.text = contato.caracterNome
+            cell.iconePerfil.backgroundColor = contato.corAtribuida
+            cell.imagemPerfil.hidden = true
+            cell.iconePerfil.hidden = false
+        }
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 88.5, height: 135)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 0, bottom: 0.0, right: 0)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0.0;
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

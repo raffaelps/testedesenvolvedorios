@@ -35,6 +35,7 @@
 		4D3B51561C4AA4CE00801668 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B51551C4AA4CE00801668 /* UIColor.swift */; };
 		4D3B515C1C4AAB8E00801668 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B515B1C4AAB8E00801668 /* NSDate.swift */; };
 		4D3B51601C4AB83600801668 /* ico_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B515F1C4AB83600801668 /* ico_menu.png */; };
+		4DC5B83D1C4F864500A586B3 /* MensagensDashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5B83C1C4F864500A586B3 /* MensagensDashboardTableViewCell.swift */; };
 		4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */; };
 		4DE8D2F31C4AD61E00F27232 /* MensagensCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */; };
 		4DE8D2FA1C4C526200F27232 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */; };
@@ -77,6 +78,7 @@
 		4D3B51551C4AA4CE00801668 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4D3B515B1C4AAB8E00801668 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		4D3B515F1C4AB83600801668 /* ico_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_menu.png; sourceTree = "<group>"; };
+		4DC5B83C1C4F864500A586B3 /* MensagensDashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensDashboardTableViewCell.swift; sourceTree = "<group>"; };
 		4DE8D2F01C4ABC4B00F27232 /* MensagensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensViewController.swift; sourceTree = "<group>"; };
 		4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensagensCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DE8D2F81C4C526200F27232 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				4D3B512C1C4A6CDA00801668 /* MenuTableViewCell.swift */,
 				4D3B514F1C4AA2C100801668 /* VendasTableViewCell.swift */,
 				4DE8D2F21C4AD61E00F27232 /* MensagensCollectionViewCell.swift */,
+				4DC5B83C1C4F864500A586B3 /* MensagensDashboardTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				4D3B512D1C4A6CDA00801668 /* MenuTableViewCell.swift in Sources */,
 				4DE8D2F11C4ABC4B00F27232 /* MensagensViewController.swift in Sources */,
 				4D3B511F1C48674F00801668 /* MenuTableViewController.swift in Sources */,
+				4DC5B83D1C4F864500A586B3 /* MensagensDashboardTableViewCell.swift in Sources */,
 				4DE8D2F31C4AD61E00F27232 /* MensagensCollectionViewCell.swift in Sources */,
 				4D3B51501C4AA2C100801668 /* VendasTableViewCell.swift in Sources */,
 				4D3B51561C4AA4CE00801668 /* UIColor.swift in Sources */,
