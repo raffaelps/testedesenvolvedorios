@@ -65,14 +65,14 @@
                                                 <constraint firstAttribute="width" constant="80" id="bPj-mJ-H95"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RICARDO AC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-sS-tnR">
-                                            <rect key="frame" x="19" y="122" width="147" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RICARDO AC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-sS-tnR">
+                                            <rect key="frame" x="19" y="122" width="386" height="27"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="23"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ricardo@email.com.br" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR8-ZY-xyR">
-                                            <rect key="frame" x="19" y="151" width="147" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ricardo@email.com.br" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR8-ZY-xyR">
+                                            <rect key="frame" x="19" y="151" width="386" height="18"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                             <color key="textColor" red="0.81568627450980391" green="0.30980392156862746" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -80,9 +80,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="EnG-ui-j28" firstAttribute="leading" secondItem="LXm-Lj-XC8" secondAttribute="leadingMargin" constant="11" id="5YA-bn-aGc"/>
+                                        <constraint firstAttribute="trailing" secondItem="OR8-ZY-xyR" secondAttribute="trailing" constant="9" id="KAB-4Z-jbE"/>
                                         <constraint firstItem="OR8-ZY-xyR" firstAttribute="leading" secondItem="LXm-Lj-XC8" secondAttribute="leadingMargin" constant="11" id="Kf3-wo-r6v"/>
                                         <constraint firstItem="EnG-ui-j28" firstAttribute="top" secondItem="LXm-Lj-XC8" secondAttribute="topMargin" constant="25" id="NW9-oI-X4b"/>
                                         <constraint firstItem="Kdu-sS-tnR" firstAttribute="top" secondItem="EnG-ui-j28" secondAttribute="bottom" constant="9" id="PZ8-W2-XX0"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kdu-sS-tnR" secondAttribute="trailing" constant="9" id="lnj-2f-zYw"/>
                                         <constraint firstItem="OR8-ZY-xyR" firstAttribute="top" secondItem="Kdu-sS-tnR" secondAttribute="bottom" constant="2" id="o2y-rG-600"/>
                                         <constraint firstItem="Kdu-sS-tnR" firstAttribute="leading" secondItem="LXm-Lj-XC8" secondAttribute="leadingMargin" constant="11" id="v4p-fi-UZb"/>
                                     </constraints>
