@@ -34,15 +34,18 @@ class MenuTableViewController: UITableViewController {
     }
     
     func carregarOpcoesMenu() {
+        
+        let keys = ["nomeOpcao", "imagemOpcao", "valorOpcao", "background"]
+        
         opcoesMenu = NSMutableArray()
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Dashboard", comment: ""), "ico_dashboard.png", ""], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Minhas Vendas", comment: ""), "ico_minhas_vendas.png", ""], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Meus Produtos", comment: ""), "ico_meus_produtos.png", ""], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Afiliados", comment: ""), "ico_afiliados.png", "121"], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Mensagens", comment: ""), "ico_mensagem.png", "+50"], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Notificacoes", comment: ""), "ico_notificacoes.png", "15"], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Minha Conta", comment: ""), "ico_minha_conta.png", ""], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
-        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Sobre o App", comment: ""), "ico_sobre_o_app.png", ""], forKeys: ["nomeOpcao", "imagemOpcao", "valorOpcao"]))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Dashboard", comment: ""), "ico_dashboard.png", "", false], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Minhas Vendas", comment: ""), "ico_minhas_vendas.png", "", false], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Meus Produtos", comment: ""), "ico_meus_produtos.png", "", false], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Afiliados", comment: ""), "ico_afiliados.png", "121", false], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Mensagens", comment: ""), "ico_mensagem.png", "+50", true], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Notificacoes", comment: ""), "ico_notificacoes.png", "15", true], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Minha Conta", comment: ""), "ico_minha_conta.png", "", false], forKeys: keys))
+        opcoesMenu.addObject(NSDictionary(objects: [NSLocalizedString("Sobre o App", comment: ""), "ico_sobre_o_app.png", "", false], forKeys: keys))
     }
     
     func carregarDadosUsuario() {
@@ -88,6 +91,15 @@ class MenuTableViewController: UITableViewController {
             else {
                 cell.valorOpcao.hidden = false
                 cell.valorOpcao.text = valor
+            }
+            
+            if (opcao.objectForKey("background") as! Bool) {
+                cell.backgroundColor = UIColor.corCinzaN1()
+                cell.nomeOpcao.textColor = UIColor.corCinzaN2()
+            }
+            else {
+                cell.backgroundColor = UIColor.whiteColor()
+                cell.textLabel?.textColor = UIColor.corCinzaN4()
             }
             
             return cell

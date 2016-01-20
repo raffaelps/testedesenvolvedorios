@@ -82,7 +82,7 @@ class MinhasVendasViewController: UIViewController, UITableViewDelegate, UITable
         
         let venda = listaVendas.objectAtIndex(indexPath.row) as! Venda
         cell.descricaoVenda.text = venda.descricao
-        cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
+        cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat(NSLocalizedString("Formato data", comment: "")))"
         cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
         cell.alertaVenda.hidden = !venda.alert
         

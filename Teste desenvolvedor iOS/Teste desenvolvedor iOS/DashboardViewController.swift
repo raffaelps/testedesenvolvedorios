@@ -126,9 +126,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let venda = listaVendas.objectAtIndex(indexPath.row - 1) as! Venda
             cell.descricaoVenda.text = venda.descricao
-            cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat("d/MM/YYYY"))"
+            cell.detalheVenda.text = "id \(venda.identificador) • \(venda.data.formatDateWithFormat(NSLocalizedString("Formato data", comment: "")))"
             cell.valorVenda.text = formatter.stringFromNumber(venda.valor)
-            cell.alertaVenda.hidden = !venda.alert
+//            cell.alertaVenda.hidden = !venda.alert
             
             if (indexPath.row % 2 == 0) {
                 cell.backgroundColor = UIColor.corCinzaN1()
@@ -177,7 +177,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let contato = listaContatos.objectAtIndex(indexPath.row) as! Contato
         cell.nomePerfil.text = contato.nome
-        cell.alertaPerfil.hidden = !contato.alertaMensagem
+//        cell.alertaPerfil.hidden = !contato.alertaMensagem
         
         if (contato.imagem != nil) {
             cell.imagemPerfil.image = contato.imagem

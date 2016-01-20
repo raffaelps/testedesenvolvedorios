@@ -40,7 +40,7 @@ public class KYDrawerController: UIViewController, UIGestureRecognizerDelegate {
         case Opened, Closed
     }
     
-    private let _kContainerViewMaxAlpha  : CGFloat        = 0.2
+    private let _kContainerViewMaxAlpha  : CGFloat        = 0.3
     
     private let _kDrawerAnimationDuration: NSTimeInterval = 0.25
     

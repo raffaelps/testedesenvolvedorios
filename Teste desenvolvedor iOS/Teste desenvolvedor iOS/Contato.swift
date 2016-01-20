@@ -23,7 +23,12 @@ class Contato: NSObject {
         self.alertaMensagem = alerta
         self.imagem = imagem
         
-        self.caracterNome = String(self.nome[self.nome.startIndex])
+        if (!self.nome.isEmpty) {
+            self.caracterNome = String(self.nome[self.nome.startIndex])
+        }
+        else {
+            self.caracterNome = ""
+        }
         
         if ((imagem == nil)) {
             corAtribuida = UIColor.corAleatoria()
